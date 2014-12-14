@@ -16,19 +16,22 @@
    {:dec 4 :rom "IV"}
    {:dec 1 :rom "I"}])
 
+(defn- decimals-up-to-3999-to-roman [decimal]
+  (loop [acc ""
+         decimal decimal
+         decs-to-roms decs-to-roms]
+    (if (zero? decimal)
+      acc
+      (let [dec-to-rom (first decs-to-roms)]
+        (if (>= decimal (:dec dec-to-rom))
+          (recur (str acc (:rom dec-to-rom))
+                 (- decimal (:dec dec-to-rom))
+                 decs-to-roms)
+          (recur acc
+                 decimal
+                 (rest decs-to-roms)))))))
+
 (defn to-roman [decimal]
   (if (<= decimal 3999)
-    (loop [acc ""
-           decimal decimal
-           decs-to-roms decs-to-roms]
-      (if (zero? decimal)
-        acc
-        (let [dec-to-rom (first decs-to-roms)]
-          (if (>= decimal (:dec dec-to-rom))
-            (recur (str acc (:rom dec-to-rom))
-                   (- decimal (:dec dec-to-rom))
-                   decs-to-roms)
-            (recur acc
-                   decimal
-                   (rest decs-to-roms))))))
+    (decimals-up-to-3999-to-roman decimal)
     "--\nIV"))

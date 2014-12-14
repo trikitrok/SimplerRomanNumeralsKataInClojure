@@ -8,4 +8,5 @@
     "converts a decimal number into a roman number"
     (to-roman 1) => "I"
     (to-roman 2) => "II"
-    (to-roman 3) => "III"))
+    (to-roman 3) => "III"
+    (to-roman 5) => "V"))

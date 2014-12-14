@@ -11,4 +11,5 @@
     (to-roman 3) => "III"
     (to-roman 5) => "V"
     (to-roman 6) => "VI"
-    (to-roman 8) => "VIII"))
+    (to-roman 8) => "VIII"
+    (to-roman 10) => "X"))

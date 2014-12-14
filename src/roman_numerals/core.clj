@@ -2,7 +2,8 @@
 
 (def ^:private 
   decs-to-roms
-  [{:dec 400 :rom "CD"}
+  [{:dec 500 :rom "D"}
+   {:dec 400 :rom "CD"}
    {:dec 100 :rom "C"}
    {:dec 90 :rom "XC"}
    {:dec 50 :rom "L"}

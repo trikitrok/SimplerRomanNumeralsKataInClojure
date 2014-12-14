@@ -5,7 +5,8 @@
 (facts 
   "about Roman numerals converter"
   (fact 
-    "converts a decimal number into a roman number"
+    "converts a decimal number until 3999 
+    into a roman number"
     (to-roman 1) => "I"
     (to-roman 2) => "II"
     (to-roman 3) => "III"
@@ -28,4 +29,7 @@
     (to-roman 400) => "CD"
     (to-roman 500) => "D"
     (to-roman 900) => "CM"
-    (to-roman 1000) => "M"))
+    (to-roman 1000) => "M"
+    (to-roman 2499) => "MMCDXCIX"
+    (to-roman 3949) => "MMMCMXLIX"
+    (to-roman 3999) => "MMMCMXCIX"))

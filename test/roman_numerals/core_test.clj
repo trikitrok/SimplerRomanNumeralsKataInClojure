@@ -24,4 +24,5 @@
     (to-roman 40) => "XL"
     (to-roman 50) => "L"
     (to-roman 90) => "XC"
-    (to-roman 100) => "C"))
+    (to-roman 100) => "C"
+    (to-roman 400) => "CD"))

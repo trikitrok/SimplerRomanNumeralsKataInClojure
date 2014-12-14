@@ -1,7 +1,7 @@
 # roman-numerals-converter
 
 <pre>  
-A roman numeral converter which takes a decimal up to 3999 and converts it into its roman equivalent.
+A roman numeral converter which takes a decimal and converts it into its roman equivalent.
 </pre>
 
 The project uses [Midje](https://github.com/marick/Midje/).

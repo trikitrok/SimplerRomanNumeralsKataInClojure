@@ -32,4 +32,8 @@
     (to-roman 1000) => "M"
     (to-roman 2499) => "MMCDXCIX"
     (to-roman 3949) => "MMMCMXLIX"
-    (to-roman 3999) => "MMMCMXCIX"))
+    (to-roman 3999) => "MMMCMXCIX")
+  
+  (fact 
+    "converts  numbers over 3999"
+    (to-roman 4000) => "--\nIV"))

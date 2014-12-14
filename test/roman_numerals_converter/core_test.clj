@@ -1,6 +1,6 @@
-(ns roman-numerals.core-test
+(ns roman-numerals-converter.core-test
   (:use midje.sweet)
-  (:use [roman-numerals.core]))
+  (:use [roman-numerals-converter.core]))
 
 (facts 
   "about Roman numerals converter"

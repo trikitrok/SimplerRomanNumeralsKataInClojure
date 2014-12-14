@@ -1,4 +1,4 @@
-(ns roman-numerals.core)
+(ns roman-numerals-converter.core)
 
 (def ^:private 
   decs-to-roms

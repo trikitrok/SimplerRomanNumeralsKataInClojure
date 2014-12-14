@@ -13,9 +13,11 @@
     (to-roman 5) => "V"
     (to-roman 6) => "VI"
     (to-roman 8) => "VIII"
+    (to-roman 9) => "IX"
     (to-roman 10) => "X"
     (to-roman 11) => "XI"
     (to-roman 18) => "XVIII"
     (to-roman 25) => "XXV"
     (to-roman 33) => "XXXIII"
-    (to-roman 34) => "XXXIV"))
+    (to-roman 34) => "XXXIV"
+    (to-roman 39) => "XXXIX"))

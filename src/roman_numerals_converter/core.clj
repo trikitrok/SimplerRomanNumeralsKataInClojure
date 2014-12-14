@@ -34,4 +34,8 @@
 (defn to-roman [decimal]
   (if (<= decimal 3999)
     (decimals-up-to-3999-to-roman decimal)
-    "--\nIV"))
+    (str "--\n" 
+         (decimals-up-to-3999-to-roman
+           (quot decimal 1000))
+         (decimals-up-to-3999-to-roman
+           (- decimal 4000)))))

@@ -16,7 +16,7 @@
    {:dec 4 :rom "IV"}
    {:dec 1 :rom "I"}])
 
-(defn- decimals-up-to-3999-to-roman [decimal]
+(defn- up-to-3999-to-roman [decimal]
   (loop [acc ""
          decimal decimal
          decs-to-roms decs-to-roms]
@@ -31,24 +31,29 @@
                  decimal
                  (rest decs-to-roms)))))))
 
+(def ^:private join-str 
+  (partial apply str))
+
+(defn- line [multiple]
+  (concat (repeat (count multiple) "-") "\n"))
+
 (defn- lines [multiple times]
-  (apply 
-    str 
-    (flatten 
-      (repeat times 
-              (concat (repeat (count multiple) "-") "\n")))))
+  (join-str (flatten (repeat times (line multiple)))))
 
 (defn- multiple [decimal]
   (loop [times 0 num decimal]
     (if (<= num 3999)
-      [(decimals-up-to-3999-to-roman num) times]
+      [(up-to-3999-to-roman num) times]
       (recur (inc times) (quot num 1000)))))
+
+(defn- over-3999-to-roman [decimal]
+  (let [[multiple times] (multiple decimal)]
+    (str (lines multiple times)     
+         multiple
+         (up-to-3999-to-roman
+           (rem decimal (* times 1000))))))
 
 (defn to-roman [decimal]
   (if (<= decimal 3999)
-    (decimals-up-to-3999-to-roman decimal)
-    (let [[multiple times] (multiple decimal)]
-      (str (lines multiple times)     
-           multiple
-           (decimals-up-to-3999-to-roman
-             (rem decimal (* times 1000)))))))
+    (up-to-3999-to-roman decimal)
+    (over-3999-to-roman decimal)))

@@ -39,4 +39,6 @@
     (to-roman 4000) => "--\nIV"
     (to-roman 4001) => "--\nIVI"
     (to-roman 30000) => "---\nXXX"
-    (to-roman 4000000) => "--\n--\nIV"))
+    (to-roman 3999005) => "---------\nMMMCMXCIXV"
+    (to-roman 4000000) => "--\n--\nIV"
+    (to-roman 4000025) => "--\n--\nIVXXV"))

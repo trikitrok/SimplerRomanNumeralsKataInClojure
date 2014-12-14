@@ -27,4 +27,5 @@
     (to-roman 100) => "C"
     (to-roman 400) => "CD"
     (to-roman 500) => "D"
-    (to-roman 900) => "CM"))
+    (to-roman 900) => "CM"
+    (to-roman 1000) => "M"))

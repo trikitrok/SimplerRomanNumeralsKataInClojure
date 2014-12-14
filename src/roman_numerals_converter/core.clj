@@ -31,16 +31,24 @@
                  decimal
                  (rest decs-to-roms)))))))
 
-(defn- lines [multiple-of-1000]
-  (apply str (repeat (count multiple-of-1000) "-")))
+(defn- lines [multiple times]
+  (apply 
+    str 
+    (flatten 
+      (repeat times 
+              (concat (repeat (count multiple) "-") "\n")))))
+
+(defn- multiple [decimal]
+  (loop [times 0 num decimal]
+    (if (<= num 3999)
+      [(decimals-up-to-3999-to-roman num) times]
+      (recur (inc times) (quot num 1000)))))
 
 (defn to-roman [decimal]
   (if (<= decimal 3999)
     (decimals-up-to-3999-to-roman decimal)
-    (let [multiple-of-1000 (decimals-up-to-3999-to-roman
-                              (quot decimal 1000))]
-    (str (lines multiple-of-1000) 
-         "\n" 
-         multiple-of-1000
-         (decimals-up-to-3999-to-roman
-           (rem decimal 1000))))))
+    (let [[multiple times] (multiple decimal)]
+      (str (lines multiple times)     
+           multiple
+           (decimals-up-to-3999-to-roman
+             (rem decimal (* times 1000)))))))

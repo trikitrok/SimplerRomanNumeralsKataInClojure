@@ -1,5 +1,37 @@
 (quot 4000 4000)
-(quot 4000 1000) 
+(quot 4000 1000)
+(repeat "_" (count "IV")) 
 (count "IV")
 (repeat (count "IV") "_")
+(apply str *)
+(apply str *!)
 (apply str *1)
+(defn- lines [multiple times]
+  (apply str 
+         (repeat times      
+                 (apply str 
+                        (repeat (count multiple) "-") "\n" ))))
+(lines "IV" 2)
+(apply str 
+  #_=>                         (repeat (count multiple) "-") "\n" )))
+(apply str 
+                        (repeat (count "IV") "-") "\n" )
+                        (repeat (count "IV") "-")
+(apply str *1 "\n")
+(apply str *1)
+                        (repeat (count "IV") "-")
+                        (apply str (repeat (count "IV") "-"))
+(concat *1 "\n")
+(apply str (concat *1 "\n"))
+(apply str (repeat (count "IV") "-") "\n")
+(apply str (concat (repeat (count "IV") "-") "\n"))
+(repeat 2 (concat (repeat (count "IV") "-") "\n"))
+(repeat 2 (repeat (count "IV") "-") "\n")
+(repeat 2 (concat (repeat (count "IV") "-") "\n"))
+(apply str (repeat 2 (concat (repeat (count "IV") "-") "\n")))
+(apply str (concat (repeat 2 (concat (repeat (count "IV") "-") "\n"))))
+(concat (repeat 2 (concat (repeat (count "IV") "-") "\n"))))
+(concat (repeat 2 (concat (repeat (count "IV") "-"))))
+(concat (repeat 2 (concat (repeat (count "IV") "-") "\n")))
+(flatten (repeat 2 (concat (repeat (count "IV") "-") "\n")))
+(apply str (flatten (repeat 2 (concat (repeat (count "IV") "-") "\n"))))

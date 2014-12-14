@@ -38,4 +38,5 @@
     "converts  numbers over 3999"
     (to-roman 4000) => "--\nIV"
     (to-roman 4001) => "--\nIVI"
-    (to-roman 30000) => "---\nXXX"))
+    (to-roman 30000) => "---\nXXX"
+    (to-roman 4000000) => "--\n--\nIV"))

@@ -9,4 +9,6 @@
     (to-roman 1) => "I"
     (to-roman 2) => "II"
     (to-roman 3) => "III"
-    (to-roman 5) => "V"))
+    (to-roman 5) => "V"
+    (to-roman 6) => "VI"
+    (to-roman 8) => "VIII"))

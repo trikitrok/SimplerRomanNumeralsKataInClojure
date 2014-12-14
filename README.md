@@ -4,6 +4,8 @@
 A roman numeral converter which takes a decimal and converts it into its roman equivalent.
 </pre>
 
+[Roman numerals info](http://www.novaroma.org/via_romana/numbers.html)
+
 The project uses [Midje](https://github.com/marick/Midje/).
 
 ## How to run the tests

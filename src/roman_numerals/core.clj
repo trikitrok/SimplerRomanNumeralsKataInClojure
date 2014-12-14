@@ -1,17 +1,20 @@
 (ns roman-numerals.core)
 
-(defn to-roman [decimal]
-  (if (>= decimal 10)
-    (str 
-      "X" 
-      (to-roman (- decimal 10)))
-    
-    (if (>= decimal 5) 
-      (str 
-        "V" 
-        (to-roman (- decimal 5)))
-      
-      (if (>= decimal 1)
-        (str 
-          "I" 
-          (to-roman (- decimal 1)))))))
+(def ^:private 
+  decs-to-roms
+  [{:dec 10 :rom "X"}
+   {:dec 5 :rom "V"}
+   {:dec 1 :rom "I"}])
+
+(defn to-roman 
+  ([decimal] (to-roman decimal decs-to-roms))
+  ([decimal decs-to-roms]
+   (if (zero? decimal)
+     ""
+     (let [dec-rom (first decs-to-roms)]
+       (if (>= decimal (:dec dec-rom))
+         (str (:rom dec-rom)
+              (to-roman (- decimal (:dec dec-rom)) 
+                        decs-to-roms))
+         (to-roman decimal 
+                   (rest decs-to-roms)))))))

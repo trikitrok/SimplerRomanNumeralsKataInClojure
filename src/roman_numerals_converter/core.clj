@@ -32,14 +32,14 @@
                  (rest decs-to-roms)))))))
 
 (defn- lines [multiple-of-1000]
-  (str (apply str (repeat (count multiple-of-1000) "-")))
+  (apply str (repeat (count multiple-of-1000) "-")))
 
 (defn to-roman [decimal]
   (if (<= decimal 3999)
     (decimals-up-to-3999-to-roman decimal)
     (let [multiple-of-1000 (decimals-up-to-3999-to-roman
                               (quot decimal 1000))]
-    lines(lines multiple-of-1000) 
+    (str (lines multiple-of-1000) 
          "\n" 
          multiple-of-1000
          (decimals-up-to-3999-to-roman

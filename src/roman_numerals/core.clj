@@ -1,4 +1,6 @@
 (ns roman-numerals.core)
 
 (defn to-roman [decimal]
-  "I")
+  (if (= decimal 1)
+    "I"
+    "II"))

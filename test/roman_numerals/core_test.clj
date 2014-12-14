@@ -20,4 +20,5 @@
     (to-roman 25) => "XXV"
     (to-roman 33) => "XXXIII"
     (to-roman 34) => "XXXIV"
-    (to-roman 39) => "XXXIX"))
+    (to-roman 39) => "XXXIX"
+    (to-roman 40) => "XL"))

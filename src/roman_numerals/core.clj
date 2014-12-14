@@ -2,7 +2,7 @@
 
 (def ^:private 
   decs-to-roms
-  [
+  [{:dec 50 :rom "L"}
    {:dec 40 :rom "XL"}
    {:dec 10 :rom "X"}
    {:dec 9 :rom "IX"}

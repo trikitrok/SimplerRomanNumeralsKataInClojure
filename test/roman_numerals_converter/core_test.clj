@@ -4,9 +4,9 @@
 
 (facts 
   "about Roman numerals converter"
+
   (fact 
-    "converts a decimal number until 3999 
-    into a roman number"
+    "converts decimal numbers up to 3999 into roman numbers"
     (to-roman 1) => "I"
     (to-roman 2) => "II"
     (to-roman 3) => "III"
@@ -35,7 +35,7 @@
     (to-roman 3999) => "MMMCMXCIX")
   
   (fact 
-    "converts  numbers over 3999"
+    "converts decimal numbers over 3999 into roman numbers"
     (to-roman 4000) => "--\nIV"
     (to-roman 4001) => "--\nIVI"
     (to-roman 30000) => "---\nXXX"

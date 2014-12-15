@@ -1,7 +1,9 @@
 # roman-numerals-converter
 
 <pre>  
-A roman numeral converter which takes a decimal and converts it into its roman equivalent.
+A roman numeral converter which takes a 
+<br>
+decimal and converts it into its roman equivalent.
 </pre>
 
 [Roman numerals info](http://www.novaroma.org/via_romana/numbers.html)

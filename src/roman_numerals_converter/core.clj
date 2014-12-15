@@ -1,5 +1,17 @@
 (ns roman-numerals-converter.core)
 
+(declare 
+  to-roman-from-up-to-3999
+  to-roman-from-over-3999)
+
+(defn to-roman [decimal]
+  (if (<= decimal 3999)
+    (to-roman-from-up-to-3999 decimal)
+    (to-roman-from-over-3999 decimal)))
+
+;;
+;; (to-roman-from-up-to-3999
+;;
 (def ^:private 
   decs-to-roms
   [{:dec 1000 :rom "M"}
@@ -16,7 +28,7 @@
    {:dec 4 :rom "IV"}
    {:dec 1 :rom "I"}])
 
-(defn- up-to-3999-to-roman [decimal]
+(defn- to-roman-from-up-to-3999 [decimal]
   (loop [acc ""
          decimal decimal
          decs-to-roms decs-to-roms]
@@ -31,6 +43,9 @@
                  decimal
                  (rest decs-to-roms)))))))
 
+;;
+;; to-roman-from-over-3999
+;;
 (def ^:private join-str 
   (partial apply str))
 
@@ -43,17 +58,12 @@
 (defn- multiple [decimal]
   (loop [times 0 num decimal]
     (if (<= num 3999)
-      [(up-to-3999-to-roman num) times]
+      [(to-roman-from-up-to-3999 num) times]
       (recur (inc times) (quot num 1000)))))
 
-(defn- over-3999-to-roman [decimal]
+(defn- to-roman-from-over-3999 [decimal]
   (let [[multiple times] (multiple decimal)]
     (str (lines multiple times)     
          multiple
-         (up-to-3999-to-roman
+         (to-roman-from-up-to-3999
            (rem decimal (* times 1000))))))
-
-(defn to-roman [decimal]
-  (if (<= decimal 3999)
-    (up-to-3999-to-roman decimal)
-    (over-3999-to-roman decimal)))

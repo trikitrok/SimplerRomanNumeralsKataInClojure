@@ -49,11 +49,14 @@
 (def ^:private join-str 
   (partial apply str))
 
-(defn- line [multiple]
+(defn- times-thousand-bar [multiple]
   (concat (repeat (count multiple) "-") "\n"))
 
-(defn- lines [multiple times]
-  (join-str (flatten (repeat times (line multiple)))))
+(defn- times-thousand-bars [multiple times]
+  (join-str 
+    (flatten 
+      (repeat times 
+              (times-thousand-bar multiple)))))
 
 (defn- multiple [decimal]
   (loop [times 0 num decimal]
@@ -63,7 +66,7 @@
 
 (defn- to-roman-from-over-3999 [decimal]
   (let [[multiple times] (multiple decimal)]
-    (str (lines multiple times)     
+    (str (times-thousand-bars multiple times)     
          multiple
          (to-roman-from-up-to-3999
            (rem decimal (* times 1000))))))

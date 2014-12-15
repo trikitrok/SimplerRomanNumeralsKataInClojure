@@ -10,7 +10,7 @@
     (to-roman-from-over-3999 decimal)))
 
 ;;
-;; (to-roman-from-up-to-3999
+;; Decimal numbers up to 3999
 ;;
 (def ^:private 
   decs-to-roms
@@ -44,7 +44,7 @@
                  (rest decs-to-roms)))))))
 
 ;;
-;; to-roman-from-over-3999
+;; Decimal numbers over 3999
 ;;
 (def ^:private join-str 
   (partial apply str))
